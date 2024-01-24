@@ -2,7 +2,7 @@
 
 const fakeRequestCallback = (url, success, failure) => {
     const delay = Math.floor(Math.random() * 4500) + 500;
-    setTimeout( () => {
+    setTimeout(() => {
         if (delay > 4000) {
             failure("Connection timeout!")
         } else {
@@ -35,15 +35,15 @@ const fakeRequestCallback = (url, success, failure) => {
 //     }, function (err) {
 //         console.log("ERROR", err)
 // })
- 
+
 ////////////////////////////// PROMISES //////////////////////////////
 
 const fakeRequestPromise = (url) => {
-    return new Promise((resolve, reject) =>{
+    return new Promise((resolve, reject) => {
         const delay = Math.floor(Math.random() * (4500) + 500);
         setTimeout(() => {
             if (delay > 4000) {
-                reject ("Connecion timeout!")
+                reject("Connecion timeout!")
             } else {
                 resolve(`Here is your fake data from ${url}`)
             }
@@ -70,21 +70,39 @@ fakeRequestPromise("yelp.com/api/coffe/page1")
                 console.log("PROMISE RESOLVED ON PAGE 2")
                 console.log("IT WORKED")
                 fakeRequestPromise("yelp.com/api/coffe/page3")
-                .then( () => {
-                    console.log("PROMISE RESOLVED ON PAGE 3")
-                    console.log("IT WORKED")
-                })
-                .catch((err) => {
-                    console.log("PROMISE RESOLVED PAGE 3")
-                    console.log("ERROR", err)
-                })
+                    .then(() => {
+                        console.log("PROMISE RESOLVED ON PAGE 3")
+                        console.log("IT WORKED")
+                    })
+                    .catch((err) => {
+                        console.log("PROMISE RESOLVED PAGE 3")
+                        console.log("ERROR", err)
+                    })
             })
             .catch((err) => {
                 console.log("PROMISE RESOLVED PAGE 2")
                 console.log("ERROR", err)
             })
-})
-    .catch( (err) => {
+    })
+    .catch((err) => {
         console.log("PROMISE RESOLVED")
         console.log("ERROR", err)
-})
+    })
+
+fakeRequestPromise("yelp.com/api/coffe/page1")
+    .then((data) => {
+        console.log("It worked (page1)")
+        console.log(data)
+        return fakeRequestPromise("yelp.com/api/coffe/page2")
+    })
+    .then((data) => {
+        console.log("It worked (page2)")
+        console.log(data)
+        return fakeRequestPromise("yelp.com/api/coffe/page3")
+    })
+    .then(() => {
+        console.log("It worked (page3)")
+    })
+    .catch((err) => {
+        console.log("Request failed!", err)
+    })
