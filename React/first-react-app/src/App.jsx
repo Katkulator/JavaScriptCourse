@@ -9,6 +9,7 @@ import ColorList from './ColorList';
 import Slots from './Slots';
 import ShoppingList from './ShoppingList';
 import PropertyList from './PropertyList'
+import Clicker from './Clicker';
 
 const data = [
   { id: 1, item: "Eggs", quantity: 12, completed: false },
@@ -43,7 +44,8 @@ function App() {
       {/* <Slots val1="🍒" val2="🍌" val3="🍊" />
       <Slots val1="🍒" val2="🍒" val3="🍒" /> */}
       {/* <ShoppingList items={data} /> */}
-      <PropertyList properties = {properties} />
+      {/* <PropertyList properties = {properties} /> */}
+      <Clicker />
     </div>
 
   );
