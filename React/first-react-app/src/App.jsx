@@ -14,6 +14,8 @@ import Form from './Form';
 import ClickerTwo from './State/ClickerTwo';
 import Counter from './State/Counter';
 import Toggler from './State/Toggler';
+import ToggleCounter from './State/ToggleCounter';
+import ColorBox from './State/ColorBox';
 
 const data = [
   { id: 1, item: "Eggs", quantity: 12, completed: false },
@@ -54,7 +56,8 @@ function App() {
       <Clicker message ="wassup" buttonText="Click Me 2!"/> */}
       {/* <ClickerTwo />
       <Counter /> */}
-      <Toggler />
+      {/* <ToggleCounter /> */}
+      <ColorBox />
     </div>
 
   );
