@@ -16,6 +16,8 @@ import Counter from './State/Counter';
 import Toggler from './State/Toggler';
 import ToggleCounter from './State/ToggleCounter';
 import ColorBox from './State/ColorBox';
+import ColorBoxes from './State/ColorBoxes';
+
 
 const data = [
   { id: 1, item: "Eggs", quantity: 12, completed: false },
@@ -33,6 +35,26 @@ const properties = [
   { id: 129034, name: "Oceanview Condo", rating: 4.7, price: 140 },
   { id: 129035, name: "Gold Miner Campground", rating: 4.69, price: 96 },
 ];
+
+const colors = [
+  "#E53935",
+  "#E91E63",
+  "#9C27B0",
+  "#673AB7",
+  "#3F51B5",
+  "#2196F3",
+  "#03A9F4",
+  "#00BCD4",
+  "#009688",
+  "#4CAF50",
+  "#8BC34A",
+  "#CDDC39",
+  "#FFEB3B",
+  "#FFC107",
+  "#FF9800",
+  "#FF5722",
+];
+
 
 function App() {
   return (
@@ -57,7 +79,7 @@ function App() {
       {/* <ClickerTwo />
       <Counter /> */}
       {/* <ToggleCounter /> */}
-      <ColorBox />
+      <ColorBoxes colors={colors} />
     </div>
 
   );

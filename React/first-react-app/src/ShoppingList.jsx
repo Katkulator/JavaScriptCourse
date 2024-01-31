@@ -5,7 +5,7 @@ export default function ShoppingList({ items }) {
         <ul>
             {items.map((i) => (
                 <ShoppingListItem
-                key={i.id} {...i}/>
+                    key={i.id} {...i} />
             ))}
         </ul>
     );
