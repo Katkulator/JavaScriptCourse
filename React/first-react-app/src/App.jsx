@@ -10,6 +10,7 @@ import Slots from './Slots';
 import ShoppingList from './ShoppingList';
 import PropertyList from './PropertyList'
 import Clicker from './Clicker';
+import Form from './Form';
 
 const data = [
   { id: 1, item: "Eggs", quantity: 12, completed: false },
@@ -45,7 +46,10 @@ function App() {
       <Slots val1="🍒" val2="🍒" val3="🍒" /> */}
       {/* <ShoppingList items={data} /> */}
       {/* <PropertyList properties = {properties} /> */}
-      <Clicker />
+      {/* <Form /> */}
+      <Clicker message ="hello!" buttonText="Click Me!"/>
+      <Clicker message ="wassup" buttonText="Click Me 2!"/>
+
     </div>
 
   );
