@@ -1,5 +1,6 @@
 import './App.css'
 import Counter from './Counter'
+import EmojyClicker from './EmojiClicker'
 import ScoreKeeper from './ScoreKeeper'
 import StateInitFunc from './StateInitFunc'
 
@@ -8,8 +9,9 @@ function App() {
     <>
       <h1>State Demo</h1>
       {/* <Counter />
-      <StateInitFunc /> */}
-      <ScoreKeeper />
+      <StateInitFunc />
+      <ScoreKeeper /> */}
+      <EmojyClicker />
     </>
   )
 }
