@@ -23,10 +23,24 @@ export default function EmojyClicker () {
     const addEmoji = () => {
        setEmojis((oldEmojis) => [...oldEmojis, selectEmoji(emojiArr)]) //...emojis makes a copy of an old array and adds in "🤯"
     }
+
+    const deleteEmoji = (id) => {
+        setEmojis((oldEmojis) => {
+            return oldEmojis.filter(e => e.id !== id)
+        })
+        
+    }
+
+
     return (
         <div>
             {emojis.map((e) => 
-            <span key={e.id} style={{fontSize: "5rem"}}>{e.emoji}</span> 
+            <span onClick={() => deleteEmoji(e.id)}
+            key={e.id}
+            style={{fontSize: "5rem"}}
+            >
+                {e.emoji}
+            </span> 
             )}<br />
             <button onClick={addEmoji}>Add Emoji</button>
         </div>
