@@ -31,6 +31,18 @@ export default function EmojyClicker () {
         
     }
 
+    const changeAll = () => {
+        const newEmoji = selectEmoji(emojiArr).emoji
+        setEmojis((oldEmojis) => {
+            return oldEmojis.map((e) => {
+                return {
+                    ...e,
+                    emoji: newEmoji
+                }
+            })
+        })
+    }
+
 
     return (
         <div>
@@ -42,7 +54,8 @@ export default function EmojyClicker () {
                 {e.emoji}
             </span> 
             )}<br />
-            <button onClick={addEmoji}>Add Emoji</button>
+            <button onClick={addEmoji}>Add Emoji</button><br />
+            <button onClick={changeAll}>Change All</button>
         </div>
     );
 }

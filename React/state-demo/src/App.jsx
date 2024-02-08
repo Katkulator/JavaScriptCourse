@@ -12,6 +12,7 @@ function App() {
       <StateInitFunc />
       <ScoreKeeper /> */}
       <EmojyClicker />
+      <ScoreKeeper numPlayers={3} target={5} />
     </>
   )
 }

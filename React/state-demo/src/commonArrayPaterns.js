@@ -36,4 +36,4 @@ const moddedCart = shoppingCart.map((item) => {
     }
 });
 
-console.log(shoppingCart)
+console.log(moddedCart)
