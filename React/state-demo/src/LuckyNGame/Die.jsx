@@ -1,7 +1,7 @@
 import './Die.css';
 
-function Die({val}) {
-    return <div className="Die">{val}</div>
+function Die({val, color = "slateblue"}) {
+    return <div className="Die" style={{backgroundColor: color}}>{val}</div>
 }
 
-export default Die;
+export default Die; 
