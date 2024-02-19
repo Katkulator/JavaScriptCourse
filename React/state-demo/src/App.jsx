@@ -6,6 +6,17 @@ import StateInitFunc from './StateInitFunc'
 import Lucky7 from './Lucky7'
 import Dice from '../../state-demo/src/LuckyNGame/Dice'
 import LuckyN from './LuckyNGame/LuckyN'
+import { sum } from './utils'
+import Box from './Box'
+import BoxGrid from './BoxGrid'
+
+function lessThan4(dice) {
+  return sum(dice) < 4;
+}
+
+function allEqual(dice) {
+  return dice.every(v => v === dice[0])
+}
 
 function App() {
   return (
@@ -18,8 +29,9 @@ function App() {
       {/* <Lucky7 /> */}
       {/* <Dice dice={[3,6,9]} color="blue"/>
       <Dice dice={[3,6,9]} color="green"/> */}
-      <LuckyN />
-      <LuckyN numDice={3} goal={11} />
+      {/* <LuckyN numDice={2} winCheck={lessThan4} />
+      <LuckyN numDice={2} winCheck={allEqual} /> */}
+      <BoxGrid />
     </>
   )
 }
