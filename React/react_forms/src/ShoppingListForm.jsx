@@ -1,11 +1,19 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./ShoppingListForm.css"
 
-function ShoppingListForm({onSubmit}){
+function ShoppingListForm({ onSubmit }) {
+
     const [formData, setFormData] = useState({
         product: "",
         quantity: 0
     });
+
+    const [isButonDisabled, setIsButtonDisabled] = useState(true)
+
+    useEffect(() => {
+        if (!formData.product || !formData.product.trim() || !formData.quantity) setIsButtonDisabled(true)
+        else setIsButtonDisabled(false)
+    })
 
     const handleChange = (evt) => {
         setFormData((currData) => {
@@ -18,10 +26,10 @@ function ShoppingListForm({onSubmit}){
     const handleSubmit = (evt) => {
         evt.preventDefault();
         onSubmit(formData);
-        setFormData({product: "", quantity: 0})
+        setFormData({ product: "", quantity: 0 })
     };
 
-    return(
+    return (
         <form className="ShoppingListForm" onSubmit={handleSubmit}>
             <label htmlFor="product">Enter Product Name</label>
             <input type="text"
@@ -42,9 +50,9 @@ function ShoppingListForm({onSubmit}){
             />
             <button
                 className="add"
-                disabled={!formData.product || !formData.quantity}
+                disabled={isButonDisabled}
                 onClick={handleSubmit}>
-                    Add Product
+                Add Product
             </button>
         </form>
     );
