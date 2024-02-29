@@ -1,12 +1,12 @@
 import './App.css'
-import QuoteFetcher from './QuoteFetcher'
+import ProfileViewerWithSearch from './ProfileViewerWithSearch'
 
 function App() {
 
 
   return (
     <>
-      <QuoteFetcher />
+      <ProfileViewerWithSearch />
     </>
   )
 }
